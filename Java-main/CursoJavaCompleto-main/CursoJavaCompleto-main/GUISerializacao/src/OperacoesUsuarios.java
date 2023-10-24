@@ -13,7 +13,6 @@ public class OperacoesUsuarios {
         this.tableModel = tableModel;
         this.table = table;
     }
-    
 
     public void cadastrarUsuario(String nome, String idade) {
         int idadeInt = Integer.parseInt(idade);
@@ -48,10 +47,11 @@ public class OperacoesUsuarios {
         Serializacao.serializar("dados.txt", usuarios);
     }
 
-    public void atualizarTabela() {
+    private void atualizarTabela() {
         tableModel.setRowCount(0);
         for (Usuario usuario : usuarios) {
             tableModel.addRow(new Object[] { usuario.getNome(), usuario.getIdade() });
         }
     }
 }
+

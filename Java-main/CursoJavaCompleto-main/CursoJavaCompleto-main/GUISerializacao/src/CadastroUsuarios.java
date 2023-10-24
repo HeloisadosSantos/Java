@@ -1,5 +1,8 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+
+
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +17,7 @@ public class CadastroUsuarios extends JPanel {
     private JTextField inputIdade;
     private DefaultTableModel tableModel;
     private JTable table;
-    private List<Usuario> usuarios = new ArrayList<>();
+    public List<Usuario> usuarios = new ArrayList<>();
     private int linhaSelecionada = -1;
 
     public CadastroUsuarios() {
@@ -48,12 +51,14 @@ public class CadastroUsuarios extends JPanel {
         setLayout(new BorderLayout());
         add(inputPanel, BorderLayout.NORTH);
         add(scrollPane, BorderLayout.CENTER);
-
+        
         File arquivo = new File("dados.txt");
+        List<Usuario> usuarios = new ArrayList<>();
         if (arquivo.exists()) {
             usuarios = Serializacao.deserializar("dados.txt");
-            abrirCadastro();
-        } 
+            atualizarTabela();
+        }
+        
 
         table.addMouseListener(new MouseAdapter() {
             @Override
@@ -106,12 +111,13 @@ public class CadastroUsuarios extends JPanel {
         });
     }
 
-    private void abrirCadastro() {
+    private void atualizarTabela() {
         tableModel.setRowCount(0);
+        
         for (Usuario usuario : usuarios) {
             tableModel.addRow(new Object[] { usuario.getNome(), usuario.getIdade() });
         }
     }
-
     
+
 }

@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.List;
 
+
+
 public class Serializacao {
     // Método para serializar uma lista de usuários em um arquivo binário
     public static void serializar(String arquivo, List<Usuario> usuarios) {
