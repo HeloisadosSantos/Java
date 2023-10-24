@@ -1,0 +1,15 @@
+Criar três calculadoras:
+ JFram 
+       -> JTabbed Pano 
+                       -> Class 
+                                 -> Class
+                                           -> Class
+
+obs: transformar o JPanel em Border Layout
+
+https://pt.stackoverflow.com/questions/12471/calculadora-com-interface-gr%C3%A1fica-java
+
+A importancia de escolher um bom layout, descreve cada versão da calculadora e porquê. 
+
+video aula:
+[#BlueLegacy] Java - Swing [1/4]: Desenvolvendo Aplicações Gráficas com Swing
